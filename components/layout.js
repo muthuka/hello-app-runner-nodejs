@@ -7,7 +7,7 @@ import Link from "next/link";
 import Logo from "./logo";
 
 export const siteTitle = "Hello App Runner and Copilot!";
-export const topPageMessage = "Let's Get Started!";
+export const topPageMessage = "Let's Get Started blind!";
 
 export default function Layout({ children, home }) {
   return (
@@ -23,14 +23,14 @@ export default function Layout({ children, home }) {
       <header className={styles.header}>
         {home ? (
           <>
-            <Logo size={{w:600,h:314}} />
+            <Logo size={{ w: 600, h: 314 }} />
             <h1 className={utilStyles.heading2Xl}>{topPageMessage}</h1>
           </>
         ) : (
           <>
             <Link href="/">
               <a>
-                <Logo size={{w:450,h:235}} />
+                <Logo size={{ w: 450, h: 235 }} />
               </a>
             </Link>
           </>

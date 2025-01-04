@@ -60,7 +60,8 @@ Which Dockerfile would you like to use for my-svc?: ./Dockerfile
 Application name: my-app
 Service name: my-svc
 Dockerfile: ./Dockerfile
-Ok great, we'll set up a Request-Driven Web Service named my-svc in application my-app listening on port 80.
+
+Ok great, we willl set up a Request-Driven Web Service named my-svc in application my-app listening on port 80.
 
 ✔ Created the infrastructure to manage services and jobs under application my-app.
 
@@ -184,8 +185,8 @@ Would you like to add a sort key to this table?: N
 
 ```bash
 Only found one workload, defaulting to: my-svc
-Storage type: DynamoDB
 Storage resource name: Items
+Lifecycle:  Yes, the storage should be created and deleted at the same time as my-svc
 Partition key: ItemId
 Partition key datatype: String
 Sort key? No
@@ -562,3 +563,12 @@ See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more inform
 ## License
 
 Licensed under the MIT-0 License. See the [LICENSE](LICENSE) file.
+
+# Changes Noticed
+
+After getting the source, there were few changes necessary.
+
+1. I didn't know how to start setting the policy for command-line. I ended up adding AdminAccess to give full permission on what it wants to do.
+2. NodeJS version on the sample code was too old inside dockerfile. I upgraded to v20 and added a .nvmrc for others to use in macos
+3. When I ran "copilot init", the last question was about the name of the deployment environment instead what was mentioned as "test" above. I ended up using the same name to deploy a staging version as "test"
+4. There was an OPENSSL issue with running next. I added support to run with old legacy SSL.

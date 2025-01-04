@@ -7,7 +7,7 @@ FROM public.ecr.aws/amazonlinux/amazonlinux:latest
 
 # You can remove this "RUN" instruction if you use a base image with
 # Node.js 12 installation.
-RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash - \
+RUN curl -sL https://rpm.nodesource.com/setup_20.x | bash - \
     && yum install -y nodejs \
     && yum -y clean all \
     && rm -rf /var/cache/yum
